@@ -1,7 +1,15 @@
 const flatten = (array) => {
-  for(let i = 0; i < array.length; i++){
-    Array.isArray(array[i])
+  let checkArray = false;
+  let resultArray = [];
+  for (let i = 0; i < array.length; i++) {
+    checkArray = Array.isArray(array[i]);
+    if (checkArray) {
+      resultArray = resultArray.concat(array[i]);
+    } else {
+      resultArray.push(array[i]);
+    }
   }
+  return resultArray;
 };
 
 
@@ -22,3 +30,5 @@ const eqArrays = (arr1, arr2) => {
   
   return true;
 };
+
+assertArraysEqual(flatten([1, 2, [3, 4], 5, [6]]),[1, 2, 3, 4, 5, 6]); // => [1, 2, 3, 4, 5, 6]
