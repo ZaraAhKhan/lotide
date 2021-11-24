@@ -3,7 +3,16 @@ const assertEqual = function(actual,expected) {
 };
 
 const countLetters = function(string) {
-
+  const arrayOfString = string.split(' ');
+  const result = {};
+  for (let char of arrayOfString) {
+    if (result[char]) {
+      result[char] += 1;
+    } else {
+      result[char] = 1;
+    }
+  }
+  return result;
 };
 
 
