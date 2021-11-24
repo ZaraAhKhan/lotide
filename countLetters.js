@@ -6,30 +6,17 @@ const countLetters = function(string) {
   const arrayOfString = string.toLowerCase().split('');
   const result = {};
   for (let char of arrayOfString) {
-    if (result[char]) {
-      result[char] += 1;
-    } else {
-      result[char] = 1;
+    if (char !== ' ') {
+      if (result[char]) {
+        result[char] += 1;
+      } else {
+        result[char] = 1;
+      }
     }
   }
   return result;
 };
+
 console.log(countLetters("Lighthouse in the house"));
-
-
-/*assertEqual(countLetters("Lighthouse in the house"),{
-  l: 1,
-  i: 2,
-  g: 1,
-  h: 4,
-  t: 2,
-  o: 2,
-  u: 2,
-  s: 2,
-  e: 3,
-  n: 1,
-});
-assertEqual(countLetters("LHL"),{
-  L: 2,
-  H: 1
-});*/
+assertEqual((countLetters("Lighthouse in the house")).h,4);
+assertEqual(countLetters("LHL").l,2);
