@@ -8,12 +8,11 @@ const eqObjects = function(object1, object2) {
       if (Array.isArray(object1[keys])) {
         if (eqArrays(object1[keys],object2[keys]) === false) {
           return false;
-        } else {
-          return true;
         }
-      }
-      if (object1[keys] !== object2[keys]) {
-        return false;
+      } else {
+        if (object1[keys] !== object2[keys]) {
+          return false;
+        }
       }
     }
   }
