@@ -14,8 +14,6 @@ const assertArraysEqual = function(arr1, arr2) {
   return eqArrays(arr1, arr2) === true ? console.log(`👍 👍 👍 Arrays are equal`) : console.log(`👎👎👎Arrays are not equal`);
 };
 
-
-
 const middle = array => {
   let middleArray = [];
   if (array.length === 1 || array.length === 2) {
